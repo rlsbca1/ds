@@ -575,6 +575,7 @@ print(df)
 - Grouping on year and calculate mean of points
 - Grouping on Team and calculate mean of points
 - Maximum points in each year
+
 - Team	Rank	Year	Points
 - Riders	1	2014	876
 - Riders	2	2015	789
