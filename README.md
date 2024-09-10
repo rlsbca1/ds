@@ -568,26 +568,26 @@ print(df)
 ```
 
 # 22.	Create Data Frame for following data and analyze following
-•	Find Teams in year 2014
-•	Find Teams in whose Rank is 1
-•	Find Team with rank 2 and 3
-•	Find Teams 2014 or 2015
-•	Grouping on year and calculate mean of points
-•	Grouping on Team and calculate mean of points
-•	Maximum points in each year
-Team	Rank	Year	Points
-Riders	1	2014	876
-Riders	2	2015	789
-Devils	2	2014	863
-Devils	3	2015	673
-Kings	3	2014	741
-Kings	4	2015	812
-Kings	1	2016	756
-Kings	1	2017	788
-Riders	2	2016	694
-Royals	4	2014	701
-Royals	1	2015	804
-Riders	2	2017	690
+- Find Teams in year 2014
+- Find Teams in whose Rank is 1
+- Find Team with rank 2 and 3
+- Find Teams 2014 or 2015
+- Grouping on year and calculate mean of points
+- Grouping on Team and calculate mean of points
+- Maximum points in each year
+- Team	Rank	Year	Points
+- Riders	1	2014	876
+- Riders	2	2015	789
+- Devils	2	2014	863
+- Devils	3	2015	673
+- Kings	3	2014	741
+- Kings	4	2015	812
+- Kings	1	2016	756
+- Kings	1	2017	788
+- Riders	2	2016	694
+- Royals	4	2014	701
+- Royals	1	2015	804
+- Riders	2	2017	690
 
 ```bash
 import pandas as pd
@@ -624,17 +624,17 @@ print(grouped['Points'].max())
 ```
 
 # 23.	Create Data Frame for following data and apply following operations on data frame
-name	physics	chemistry	algebra
-Somu	68	84	78
-Kiku	74	56	88
-Amol	77	73	82
-Lini	78	69	87
+- name	physics	chemistry	algebra
+- Somu	68	84	78
+- Kiku	74	56	88
+- Amol	77	73	82
+- Lini	78	69	87
 
-•	Add new data for Geo whose marks is 87,92,97
-•	Add Maths marks for all students
-•	Sort data frame by name in ascending also descending
-•	Apply filter on name and physics
-•	Apply filter where column name start with chem
+- •	Add new data for Geo whose marks is 87,92,97
+- •	Add Maths marks for all students
+- •	Sort data frame by name in ascending also descending
+- •	Apply filter on name and physics
+- •	Apply filter where column name start with chem
 
 ```bash
 import pandas as pd
