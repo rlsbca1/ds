@@ -1,14 +1,14 @@
 # ds
 
 # 1. Consider the following data of three cricket players in 10 innings T20 Match 
-Player	1	2	3	4	5	6	7	8	9	10
-Cricketer1	25	10	55	45	55	78	55	0	49	10
-Cricketer2	47	62	78	45	100	20	100	0	80	10
-Cricketer3	80	17	7	10	45	79	75	75	80	42
-a)	Find Whose average is better.
-b)	What is the middlemost value of each player?
-c)	Whose most frequent value is good.
-d)	Draw a simple plot to show performance of players.
+- Player	1	2	3	4	5	6	7	8	9	10
+- Cricketer1	25	10	55	45	55	78	55	0	49	10
+- Cricketer2	47	62	78	45	100	20	100	0	80	10
+- Cricketer3	80	17	7	10	45	79	75	75	80	42
+- a)	Find Whose average is better.
+- b)	What is the middlemost value of each player?
+- c)	Whose most frequent value is good.
+- d)	Draw a simple plot to show performance of players.
 
 ```bash
 import statistics as st
@@ -345,11 +345,11 @@ plt.title("Student Performance in DS Subject")
 ```
 
 # 15.	Draw subplot 2 by 2 for the following data of student deepali in for different subjects. Comment your analysis.
-Test	T1	T2	T3	T4	T5	T6
-CC	20	23	25	26	28	30
-DS	30	28	25	29	30	28
-CN	29	28	25	22	21	19
-ENG	15	19	20	15	22	23
+- Test	T1	T2	T3	T4	T5	T6
+- CC	20	23	25	26	28	30
+- DS	30	28	25	29	30	28
+- CN	29	28	25	22	21	19
+- ENG	15	19	20	15	22	23
 
 ```bash
 import matplotlib.pyplot as plt
