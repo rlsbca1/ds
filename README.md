@@ -50,14 +50,12 @@ import statistics as st
 import matplotlib.pyplot as pt
 data = pd.read_csv("E:\Data Science with Python\DataSet\insurance.csv")
 print(data)
-#Analysis genderwise
 ls=data['sex'].tolist()
 y1=ls.count('female')
 y2=ls.count('male')
 print("female Count = ",y1)
 print("male Count = ",y2)
 
-#Aveage age of customers
 avgage=data['age'].tolist()
 print("Average Age=  %.2f " % st.mean(avgage))
 
@@ -152,7 +150,6 @@ print("Quartile 2 = %.2f"%np.quantile(data,0.50))
 print("Quartile 3 = %.2f"%np.quantile(data,0.75))
 pt.figure(figsize=(8,4))
 pt.hist(data)
-# Vertical lines for each percentile of interest
 pt.axvline(np.quantile(data, 0.25), linestyle='--', color='red')
 pt.text(np.quantile(data, 0.25), 4, 'Q1', color='r', ha='right', va='top', rotation=60)
 pt.axvline(np.quantile(data, 0.50), linestyle='-',  color='red')
@@ -169,7 +166,6 @@ pt.show()
 import matplotlib.pyplot as pt
 import statistics as st
 import seaborn as sns
-# Creating a dataset
 dataset =[85,96,76,108,84,100,86,70,95,84]
 meandata=st.mean(dataset)
 print("Mean =  %.2f"%meandata)
@@ -177,7 +173,6 @@ modedata=st.mode(dataset)
 print("Mode =  %.2f"%modedata)
 meddata=st.median(dataset)
 print("Median =  %.2f"%meddata)
-# Calculate the skewness
 stddata=st.stdev(dataset)
 print("Standard Deviation =%.2f" % stddata)
 sk=(meandata-modedata)/stddata
@@ -237,7 +232,6 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 x= np.array([1,2,3,4,5,6,7,8])
-# Dependent Variable - percent of successful hunts
 y = np.array([30,45,51,57,60,65,70,71])
 n = np.size(x)
 x_mean = np.mean(x)
@@ -271,10 +265,8 @@ x=data['YearsExperience']
 y=data['Salary']
 plt.plot(x, y, 'o')
 print("Correlation Coefficient = ",np.corrcoef(x,y))
-#obtain m (slope) and b(intercept) of linear regression line
 b, a = np.polyfit(x, y, 1)
 print("Slope= %.2f"%b,"Intercept = %.2f"%a)
-#add linear regression line to scatterplot
 plt.plot(x, b*x+a,color='red',label='y=9449.96x+25792.20')
 plt.legend()
 plt.title("Relation Between Number of Experience and salary")
@@ -294,11 +286,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 Stud1=[85,87,80,84,96]
 Stud2=[65,64,55,54,60]
-# create plot
 bar_width = 0.35
 X = np.arange(5)
 p1 = plt.bar(X, Stud1, bar_width, color='b',label='Student1')
-# The bar of second plot starts where the first bar ends
 p2 = plt.bar(X + bar_width, Stud2, bar_width,color='g',label='Student2')
 plt.xlabel('Subject')
 plt.ylabel('Scores')
@@ -330,7 +320,7 @@ plt.show()
 # 14.	Consider the following Marks data of students and draw color bar for percentage. Also analyze data. Given marks is out of 30.40% and above Passing percentage.
 - marks= [30,28,22,18,15,5,0,19,22,23]
 ```bash
- import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 rollno= ["Amita","Roopa","Sonali","Santosh","Manali","Mohan","Pramveer","Hema","Gita","Sohan"]
 marks= [30,28,22,18,15,5,0,19,22,23]
 perls=[]
@@ -372,7 +362,6 @@ ax[0, 0].set_title("Cloud Computing")
 ax[0, 1].set_title("Data Science")
 ax[1, 0].set_title("Computer Network")
 ax[1, 1].set_title("English")
-# set spacing
 fig.tight_layout()
 plt.show()
 
@@ -427,28 +416,19 @@ plt.show()
 # 18.	Display 2D ndarray basic operation accessing, inserting, deleting, updating elements operations also show additional functions of numpy array.
 ```bash
 import numpy as np
-#Create 2 D Array
 arr=np.array([[1,2,3],[4,5,6],[7,8,9]])
 arr1=np.array([[10,11,12],[13,14,15],[16,17,18]])
-#print array
 print("Array = ",arr)
-#Display Dimesion of array
 print("Dimesion of array = ",arr.ndim)
-#Display Shape of Array
 print("Dimesion of array = ",arr.shape)
-# Access element 5
 print("Accessed Element= ",arr[1,1])
-#Insert new value at position 1 rowwise
 arr=np.insert(arr,1,[9,4,7],axis=0)
 print("After Insertion = ",arr)
-#Modification 8 with 88
 arr[3,1]=88
 print("After Modification = ",arr)
-#Deleting elemnts
 print(arr)
 arr = np.delete(arr, 1, axis=0)
 print("After Deletion = ",arr)
-#Addtional numpy array functions
 print("Transpose of matrix= ",np.transpose(arr))
 print("After Concatnation Columnwise of arr and arr1= ", np.concatenate((arr,arr1),axis=1))
 print("After Vetical stack operation on arr and arr1= ",np.vstack((arr,arr1)))
@@ -465,22 +445,15 @@ arr=np.array([[[1,2,3],[4,5,6]],
 arr1=np.array([[[19,20,21],[22,23,24]],
               [[25,26,27],[28,29,30]],
              [[31,32,33],[34,35,36]]])
-#Print Dimnsion and shape
 print("Dimension= ",arr.ndim,"Shape = ",arr.shape)
-#Access 5
 print("Accessing Element 5 =",arr[0,1,1])
-#Access 10,11,12
 print("Accessing Element [10,11,12] =",arr[1,1,:])
-#Insert new row [[19,20,21],[22,23,24]]
 arr=np.insert(arr,3,[[19,20,21],[22,23,24]],axis=0)
 print("After Insertion",arr)
-#Modify 8 to 18
 arr[1,0,1]=18
 print("After Modifying 8 to 18 = ",arr)
-#Delete row 2
 arr=np.delete(arr,2,axis=0)
 print("After deleting 2 row = ",arr)
-#Addtional Functions
 print("Transpose of matrix= ",np.transpose(arr))
 print("After Concatnation Columnwise of arr and arr1= ", np.concatenate((arr,arr1),axis=1))
 print("After Vetical stack operation on arr and arr1= ",np.vstack((arr,arr1)))
@@ -502,12 +475,10 @@ print(corr)
 fig ,ax=plt.subplots()
 plt.title("Body Fat Correlation")
 im= ax.imshow(corr.values)
-# set labels
 ax.set_xticks(np.arange(len(corr.columns)))
 ax.set_yticks(np.arange(len(corr.columns)))
 ax.set_xticklabels(corr.columns)
 ax.set_yticklabels(corr.columns)
-#Adding values
 for i in range(len(corr.columns)):
     for j in range(len(corr.columns)):
         text = ax.text(j, i, np.around(corr.iloc[i, j], decimals=2),
@@ -533,34 +504,26 @@ df=pd.DataFrame({"Team":["MI","CSK","Devils","MI","CSK","RCB","CSK",
                        "R9","R10","R11"])
 print("DataFrame = ")
 print(df)
-#Access Rows 2,4,6,8 using index and using labels
 print("After Accessing Rows 2,4,6,8 Using Labels = ")
 print(df.loc[["R2","R4","R6","R8"]])
 print("After Accessing Rows 2,4,6,8 Using Index = ")
 print(df.iloc[1:8:2])
-#Access top 3 Rows and also bottom 3 rowa
 print("Top 3 Rows = ")
 print(df.head(3))
 print("Bottom 3 Rows= ")
 print(df.tail(3))
-#Access columns team and points
 print("After Accessing 2 Columns  Team and Points= ")
 print(df[['Team','Points']])
-#Access Row 3 and column 1,3,4 using index
 print("After Accessing row 3 and Columns  1,3,4 using index= ")
 print(df.iloc[2,[0,2,3]])
-#Access Row 3 and column 1,3,4 using labels
 print("After Accessing row 3 and Columns  1,3,4 using labels= ")
 print(df.loc["R3",['Team','Year','Points']])
-#Update last record with values 'RCB',3,2016,800
 df.iloc[10]=['RCB',3,2016,800]
 print("After Updating Last Row = ")
 print(df)
-#Insert new record in dataframe
 df.loc[len(df.index)] = ['MI',2,2017,800]
 print("After Inserting Last Row= ")
 print(df)
-#Delete row from dataframe
 df=df.drop([11])
 print("After Deleting Last Row = ")
 print(df)
@@ -575,7 +538,7 @@ print(df)
 - Grouping on year and calculate mean of points
 - Grouping on Team and calculate mean of points
 - Maximum points in each year
-
+# 
 - Team	Rank	Year	Points
 - Riders	1	2014	876
 - Riders	2	2015	789
@@ -600,25 +563,18 @@ ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
 df = pd.DataFrame(ipl_data)
 print("DataFrame = ")
 print(df)
-#Find Teams in year 2014
 print("Teams in year 2014 = ")
 print(df[df['Year'] == 2014])
-#Find Teams in whose Rank is 1
 print("Teams in whose Rank is 1 = ")
 print(df[df['Rank'] ==1])
-#Find Team with rank 2 and 3
 print("Teams in whose Rank is 2 or 3 = ")
 print(df[df["Rank"].isin([2, 3])])
-#Find Teams 2014 or 2015
 print("Teams in year 2014 and 2015 = ")
 print(df[ ( df["Year"] == 2014) | ( df["Year"] == 2015 )])
-#Grouping on year and calculate mean of points
 grouped = df.groupby('Year')
 print(grouped['Points'].mean())
-#Grouping on Team and calculate mean of points
 grouped = df.groupby('Team')
 print(grouped['Points'].mean())
-#Maximum points in each year
 grouped = df.groupby('Year')
 print(grouped['Points'].max())
 
@@ -643,31 +599,24 @@ data = {'name': ['Somu', 'Kiku', 'Amol', 'Lini'],
     'physics': [68, 74, 77, 78],
     'chemistry': [84, 56, 73, 69],
     'algebra': [78, 88, 82, 87]}
-#create dataframe
 df_marks = pd.DataFrame(data)
 print('Original DataFrame\n------------------')
 print(df_marks)
-#ADD row to the dataframe
 df_marks.loc[len(df_marks)]=['Geo', 87, 92,97]
 print("After adding new row = ")
 print(df_marks)
-#Adding new column
 df_marks.insert(2,"Maths",[45,66,78,90,91])
 print("After adding new column = ")
 print(df_marks)
-#Sorting by name in ascending order
 df_marks=df_marks.sort_values(by=['name'])
 print("Sorting Name by Ascending order = ",)
 print(df_marks)
-#Sorting by name in decending order
 df_marks=df_marks.sort_values(by=['name'], ascending=False)
 print("Sorting Name by Descending order = ",)
 print(df_marks)
-#Filter on column name and physics
 df_Phy=df_marks.filter(items=['name','physics'])
 print("After Filter on column name and physics" )
 print(df_Phy)
-#Filter Column start with chem
 df_chem=df_marks.filter(regex='^chem',axis=1)
 print("After Filter on chem" )
 print(df_chem)
@@ -699,10 +648,8 @@ time_sentences = ["Monday: The doctor's appointment is at 2:45 pm.",
 
 df = pd.DataFrame(time_sentences, columns=['text'])
 print(df)
-# find which entries contain the word 'appointment'
 print("find which entries contain the word 'appointment")
 print(df[df['text'].str.contains('appointment')])
-# extract the entire time, the hours, the minutes, and the period
 print("extract the entire time, the hours, the minutes, and the period")
 print(df['text'].str.extractall(r'(?P<time>\d:\d{1,2})'))
 
@@ -744,7 +691,6 @@ right_join = pd.merge(table1,       # First table
                     on="P_ID")     # Column(s) to join on
 
 print(right_join)
-# An outer join keeps all key values in both data frames
 
 outer_join = pd.merge(table1,      # First table
                     table2,        # Second table
