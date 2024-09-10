@@ -673,29 +673,29 @@ table2 = pd.DataFrame({"P_ID" : (1, 2, 4, 5, 7, 8, 9, 10),
                      "follow_up" : (0,0,1,2,0,0,0,0)
                        })
 print(table2)
-combined1 = pd.merge(table1,       # First table
-                    table2,        # Second table
-                    how="inner",   # Merge method
-                    on="P_ID")     # Column(s) to join on
+combined1 = pd.merge(table1,     
+                    table2,       
+                    how="inner",  
+                    on="P_ID")   
 
 print(combined1)
-left_join = pd.merge(table1,       # First table
-                    table2,        # Second table
-                    how="left",   # Merge method
-                    on="P_ID")     # Column(s) to join on
+left_join = pd.merge(table1,    
+                    table2,       
+                    how="left", 
+                    on="P_ID")    
 
 print(left_join)
-right_join = pd.merge(table1,       # First table
-                    table2,        # Second table
-                    how="right",   # Merge method
-                    on="P_ID")     # Column(s) to join on
+right_join = pd.merge(table1,     
+                    table2,      
+                    how="right",   
+                    on="P_ID")     
 
 print(right_join)
 
-outer_join = pd.merge(table1,      # First table
-                    table2,        # Second table
-                    how="outer",   # Merge method
-                    on="P_ID")     # Column(s) to join on
+outer_join = pd.merge(table1,     
+                    table2,       
+                    how="outer",   
+                    on="P_ID")     
 
 print(outer_join)
 
